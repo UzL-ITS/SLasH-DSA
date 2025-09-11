@@ -1,0 +1,6 @@
+[submodule "swage-victim-ossl-slh-dsa/victim/openssl"]
+	path = swage-victim-ossl-slh-dsa/victim/openssl
+	url = https://github.com/openssl/openssl
+[submodule "swage"]
+	path = swage
+	url = https://git.uni-luebeck.de/its/research-projects/rowhammer/swage

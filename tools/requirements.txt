@@ -1,0 +1,3 @@
+numpy
+pycryptodome==3.16.0
+sympy==1.11.1

@@ -1,0 +1,14 @@
+[package]
+name = "swage-pfn"
+version = "0.2.0"
+edition = "2024"
+description = "PFN allocator module for Swage."
+repository = "https://github.com/UzL-ITS/swage"
+license = "MIT"
+
+[dependencies]
+libc = "0.2.155"
+log = "0.4.27"
+lpfs = "0.2.0"
+swage-core = { workspace = true }
+thiserror = "2.0.16"

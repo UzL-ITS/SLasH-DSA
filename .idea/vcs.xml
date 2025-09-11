@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/cloudflare-quiche" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/cloudflare-quiche/quiche/deps/boringssl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/fuzz/corpora" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/gost-engine" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/gost-engine/libprov" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/krb5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/oqs-provider" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/pkcs11-provider" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/pkcs11-provider/python-ecdsa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/pkcs11-provider/tlsfuzzer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/pkcs11-provider/tlslite-ng" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/pyca-cryptography" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/python-ecdsa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/tlsfuzzer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/tlslite-ng" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/swage-victim-ossl-slh-dsa/victim/openssl/wycheproof" vcs="Git" />
+  </component>
+</project>

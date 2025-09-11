@@ -1,0 +1,132 @@
+//! Utility functions and types used throughout the project.
+pub mod alloc_util;
+pub mod cancelable_thread;
+mod constants;
+mod ipc;
+mod named_progress;
+mod rng;
+
+pub use self::constants::*;
+pub use self::ipc::*;
+pub use self::named_progress::NamedProgress;
+pub use self::rng::Rng;
+
+use std::collections::HashMap;
+use std::io::Read;
+use std::time::{Duration, Instant};
+
+pub trait GroupBy<V> {
+    fn group_by<K: std::hash::Hash + std::cmp::Eq, F: Fn(&V) -> K>(
+        self,
+        f: F,
+    ) -> HashMap<K, Vec<V>>;
+}
+
+impl<T> GroupBy<T> for Vec<T> {
+    fn group_by<K: std::hash::Hash + std::cmp::Eq, F: Fn(&T) -> K>(
+        self,
+        f: F,
+    ) -> HashMap<K, Vec<T>> {
+        let mut out = HashMap::new();
+        for elem in self {
+            let k = f(&elem);
+            out.entry(k).or_insert(vec![]).push(elem);
+        }
+        out
+    }
+}
+
+pub fn make_vec<T>(n: usize, f: impl Fn(usize) -> T) -> Vec<T> {
+    let mut v = Vec::with_capacity(n);
+    for i in 0..n {
+        let val = f(i);
+        v.push(val);
+    }
+    v
+}
+
+pub fn find_pattern(vec: &[u8], pattern: u8, length: usize) -> Option<usize> {
+    let target_sequence: Vec<u8> = vec![pattern; length];
+    vec.windows(length)
+        .position(|window| window == target_sequence.as_slice())
+}
+
+#[macro_export]
+macro_rules! retry {
+    ($f:expr) => {{
+        let f = $f;
+        loop {
+            match f() {
+                Ok(x) => break x,
+                Err(e) => {
+                    log::error!("retry! block failed: {}", e);
+                }
+            }
+        }
+    }};
+}
+
+pub trait ReadLine {
+    fn read_line(&mut self) -> std::io::Result<String>;
+}
+
+impl ReadLine for std::process::ChildStdout {
+    fn read_line(&mut self) -> std::io::Result<String> {
+        let mut out = Vec::new();
+        let mut buf = [0; 1];
+        let mut last_recv = None;
+        const READ_TIMEOUT: Duration = Duration::from_millis(1);
+        loop {
+            let nbytes = self.read(&mut buf)?;
+            if nbytes == 0 && last_recv.is_none() {
+                return Err(std::io::Error::from(std::io::ErrorKind::WouldBlock));
+            }
+            if nbytes == 0 && last_recv.is_some_and(|t: Instant| t.elapsed() > READ_TIMEOUT) {
+                return Err(std::io::Error::from(std::io::ErrorKind::WouldBlock));
+            }
+            if nbytes == 0 {
+                continue;
+            }
+            if buf[0] == b'\n' {
+                break;
+            }
+            last_recv = Some(std::time::Instant::now());
+            out.push(buf[0]);
+        }
+        let out = String::from_utf8(out).expect("utf8");
+        Ok(out)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::GroupBy;
+
+    #[test]
+    fn test_group_mod2() {
+        let addrs = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let groups = addrs.group_by(|x| x % 2);
+        assert_eq!(groups.len(), 2);
+        assert_eq!(groups[&0], vec![0, 2, 4, 6, 8]);
+        assert_eq!(groups[&1], vec![1, 3, 5, 7, 9]);
+    }
+
+    #[test]
+    fn test_group_identity() {
+        let addrs = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let groups = addrs.group_by(|x| *x);
+        for (i, group) in groups {
+            assert_eq!(group.len(), 1);
+            assert_eq!(group[0], i);
+        }
+    }
+
+    #[test]
+    fn test_group_prefix() {
+        let addrs = vec!["apple", "banana", "apricot", "blueberry"];
+        let groups = addrs.group_by(|x| &x[0..1]);
+        assert_eq!(groups.len(), 2);
+        assert_eq!(groups["a"], vec!["apple", "apricot"]);
+        assert_eq!(groups["b"], vec!["banana", "blueberry"]);
+    }
+}

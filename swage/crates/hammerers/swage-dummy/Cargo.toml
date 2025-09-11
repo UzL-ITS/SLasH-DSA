@@ -1,0 +1,12 @@
+[package]
+name = "swage-dummy"
+version = "0.2.0"
+edition = "2024"
+description = "Dummy hammerer module for Swage."
+repository = "https://github.com/UzL-ITS/swage"
+
+[dependencies]
+log = "0.4.0"
+
+swage-core = { workspace = true }
+thiserror = "2.0.16"

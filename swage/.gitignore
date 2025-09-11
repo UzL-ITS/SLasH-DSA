@@ -1,0 +1,15 @@
+/target
+*.so
+/config
+.venv
+/log
+.idea
+/results
+/crates/victims/swage-victim-sphincs-plus/faulted_sigs
+__pycache__
+/hammer.log
+/hammer.txt
+/sigs.txt
+*.pkl
+tools/data
+results*

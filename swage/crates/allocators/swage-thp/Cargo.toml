@@ -1,0 +1,15 @@
+[package]
+name = "swage-thp"
+version = "0.2.0"
+edition = "2024"
+description = "THP allocator module for Swage."
+repository = "https://github.com/UzL-ITS/swage"
+
+[dependencies]
+indicatif = "0.18.0"
+itertools = "0.14"
+libc = "0.2"
+log = "0.4.0"
+
+swage-core = { workspace = true }
+thiserror = "2.0.16"

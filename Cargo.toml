@@ -1,0 +1,50 @@
+[package]
+name = "SLasH-DSA"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = [ "slh-dsa-sha2", "slh-dsa-128s", "slh-dsa-det" ]
+slh-dsa-sha2 = [ "swage-victim-ossl-slh-dsa/sha2"]
+slh-dsa-shake = [ "swage-victim-ossl-slh-dsa/shake"]
+
+slh-dsa-128s = [ "swage-victim-ossl-slh-dsa/128s"]
+slh-dsa-128f = [ "swage-victim-ossl-slh-dsa/128f"]
+slh-dsa-192s = [ "swage-victim-ossl-slh-dsa/192s"]
+slh-dsa-192f = [ "swage-victim-ossl-slh-dsa/192f"]
+slh-dsa-256s = [ "swage-victim-ossl-slh-dsa/256s"]
+slh-dsa-256f = [ "swage-victim-ossl-slh-dsa/256f"]
+
+slh-dsa-det = [ "swage-victim-ossl-slh-dsa/det"]
+slh-dsa-rnd = [ "swage-victim-ossl-slh-dsa/rnd"]
+
+[workspace]
+members = [
+    "swage-victim-ossl-slh-dsa"
+]
+exclude = [ "swage" ]
+resolver = "2"
+
+[workspace.dependencies]
+anyhow = { version = "1.0", features = ["backtrace"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+libc = "0.2"
+log = "0.4.0"
+indicatif = "0.18.0"
+chrono = "0.4.39"
+swage = { path = "swage" }
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { version = "4.5", features = ["derive"] }
+env_logger = "0.11.8"
+libc = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+log = { workspace = true }
+indicatif = { workspace = true }
+indicatif-log-bridge = "0.2"
+chrono = { workspace = true }
+swage = { workspace = true, features = [ "blacksmith", "pfn", "spoiler" ] }
+swage-victim-ossl-slh-dsa = { path = "swage-victim-ossl-slh-dsa" }

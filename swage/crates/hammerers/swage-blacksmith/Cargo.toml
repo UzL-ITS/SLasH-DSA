@@ -1,0 +1,28 @@
+[package]
+name = "swage-blacksmith"
+version = "0.2.0"
+edition = "2024"
+description = "Blacksmith hammerer module for Swage."
+repository = "https://github.com/UzL-ITS/swage"
+
+[features]
+jitter_dump = []
+iperf = ["dep:perfcnt"]
+
+[dependencies]
+memmap2 = "0.9.8"
+rand = "0.9.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.99"
+serde_with = "3.0.0"
+nalgebra = "0.34.1"
+log = "0.4.0"
+itertools = "0.14.0"
+perfcnt = { version = "0.8.0", optional = true }
+iced-x86 = { version = "1.19.0", features = ["code_asm"] }
+swage-core = { workspace = true }
+thiserror = "2.0.16"
+
+[dev-dependencies]
+clap = { version = "4.3", features = ["derive"] }
+env_logger = "0.11"

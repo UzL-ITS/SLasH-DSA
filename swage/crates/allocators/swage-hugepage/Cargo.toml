@@ -1,0 +1,16 @@
+[package]
+name = "swage-hugepage"
+version = "0.2.0"
+edition = "2024"
+description = "Hugepage allocator module for Swage."
+repository = "https://github.com/UzL-ITS/swage"
+license = "MIT"
+
+
+[dependencies]
+lazy_static = "1.4.0"
+libc = "0.2.155"
+log = "0.4.0"
+rand = "0.9.2"
+
+swage-core = { workspace = true }

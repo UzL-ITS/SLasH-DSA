@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage-victim-ossl-slh-dsa/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/allocators/swage-coco/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/allocators/swage-hugepage/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/allocators/swage-mmap/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/allocators/swage-pfn/lib/lpfs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/allocators/swage-pfn/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/allocators/swage-spoiler/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/hammerers/swage-blacksmith/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/hammerers/swage-blacksmith/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/hammerers/swage-dev-mem/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/hammerers/swage-dummy/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/swage-bin/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/swage-bin/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/swage-core/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/swage-core/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/swage-derive/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/victims/swage-victim-dev-memcheck/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/victims/swage-victim-sphincs-plus/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/allocators/swage-coco/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/allocators/swage-hugepage/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/allocators/swage-mmap/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/allocators/swage-pfn/lib/lpfs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/allocators/swage-pfn/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/allocators/swage-spoiler/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/hammerers/swage-blacksmith/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/hammerers/swage-blacksmith/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/hammerers/swage-dev-mem/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/hammerers/swage-dummy/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/swage-core/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/swage-core/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/crates/victims/swage-victim-dev-memcheck/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swage/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/swage/allocators/swage-pfn/lib/lpfs/target" />
+      <excludeFolder url="file://$MODULE_DIR$/swage/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

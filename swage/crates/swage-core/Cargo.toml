@@ -1,0 +1,22 @@
+[package]
+name = "swage-core"
+version = "0.2.0"
+edition = "2024"
+description = "Swage core components."
+repository = "https://github.com/UzL-ITS/swage"
+
+[dependencies]
+libc = "0.2.155"
+rand = "0.9.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4.0"
+pagemap = "0.1.0"
+itertools = "0.14.0"
+indicatif = "0.18.0"
+thiserror = "2.0.10"
+
+chrono = "0.4.41"
+
+[dev-dependencies]
+anyhow = "1.0.100"

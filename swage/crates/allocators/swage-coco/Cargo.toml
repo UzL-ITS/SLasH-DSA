@@ -1,0 +1,12 @@
+[package]
+name = "swage-coco"
+version = "0.2.0"
+edition = "2024"
+description = "CoCo allocator module for Swage."
+repository = "https://github.com/UzL-ITS/swage"
+license = "MIT"
+
+[dependencies]
+libc = "0.2.155"
+
+swage-core = { workspace = true }

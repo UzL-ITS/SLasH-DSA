@@ -1,0 +1,11 @@
+[package]
+name = "swage-dev-mem"
+version = "0.2.0"
+edition = "2024"
+description = "DevMem hammerer module for Swage."
+repository = "https://github.com/UzL-ITS/swage"
+
+[dependencies]
+log = "0.4.0"
+
+swage-core = { workspace = true }

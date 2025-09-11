@@ -1,0 +1,133 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // aaf3a69a-de8f-4151-90d2-50b4d8f41f70
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "hammer [DEBUG]",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=hammer",
+                    "--package=bs_poc"
+                ],
+                "filter": {
+                    "name": "hammer",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "--alloc-strategy=pfn",
+                "--profiling-rounds=10",
+                "--attempts=100"
+            ],
+            "env": {
+                "RUST_LOG": "debug"
+            },
+            "cwd": "${workspaceFolder}",
+        },
+        {
+            "name": "hammer [SUDO] [DEBUG]",
+            "type": "lldb",
+            "request": "launch",
+            "initCommands": [
+                "platform select remote-linux", // For example: 'remote-linux', 'remote-macosx', 'remote-android', etc.
+                "platform connect connect://127.0.0.1:23809",
+                "settings set target.inherit-env false", // See note below.
+            ],
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=hammer",
+                    "--package=bs_poc"
+                ],
+                "filter": {
+                    "name": "hammer",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "--alloc-strategy=hugepage-rnd",
+                "--profiling-rounds=10",
+                "--attempts=100"
+            ],
+            "env": {
+                "RUST_LOG": "debug"
+            },
+            "cwd": "${workspaceFolder}",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "check_addr [DEBUG]",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=check_addr",
+                    "--package=bs_poc"
+                ],
+                "filter": {
+                    "name": "check_addr",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "--config=config/esprimo-d757_i5-6400_gskill-F4-2133C15-16GIS.json",
+                "--use-hugepage"
+            ],
+            "env": {
+                "RUST_LOG": "debug"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "check_addr [RUN]",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--release",
+                    "--bin=check_addr",
+                    "--package=bs_poc"
+                ],
+                "filter": {
+                    "name": "check_addr",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "--config=config/esprimo-d757_i5-6400_gskill-F4-2133C15-16GIS.json",
+                "--use-hugepage"
+            ],
+            "env": {
+                "RUST_LOG": "info"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Tests [DEBUG]",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                ],
+                "filter": {
+                    "name": "tests",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug"
+            },
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
